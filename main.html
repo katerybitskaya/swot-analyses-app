@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOT Analysis App</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <h1 class="logo">SWOT Analysis</h1>
+        </div>
+        <div class="nav-right">
+            <span class="username" id="currentUserName">John Doe</span>
+            <select class="language-selector" id="languageSelector" title="Select language"
+                aria-label="Language selection">
+                <option value="EN">EN</option>
+                <option value="PL">PL</option>
+                <option value="RU">RU</option>
+            </select>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-toggle" id="sidebarToggle">
+            <span class="hamburger-icon">☰</span>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-collapsed">
+                <div class="icon-item" data-page="profile">◈</div>
+                <div class="icon-item" data-page="swot">▤</div>
+                <div class="icon-item" data-page="settings">⎔</div>
+                <div class="icon-item" data-page="logout">⎋</div>
+            </div>
+            <div class="sidebar-expanded">
+                <div class="menu-item" data-page="profile">
+                    <span class="menu-icon">◈</span>
+                    <span class="menu-text">Profile</span>
+                </div>
+                <div class="menu-item" data-page="swot">
+                    <span class="menu-icon">▤</span>
+                    <span class="menu-text">SWOT Analysis</span>
+                </div>
+                <div class="menu-item" data-page="settings">
+                    <span class="menu-icon">⎔</span>
+                    <span class="menu-text">Settings</span>
+                </div>
+                <div class="menu-item" data-page="logout">
+                    <span class="menu-icon">⎋</span>
+                    <span class="menu-text">Log out</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="content-area">
+            <h2>Welcome to SWOT Analysis</h2>
+            <p>Select an option from the sidebar to begin.</p>
+        </div>
+    </div>
+
+    <input type="file" id="photoInput" accept="image/*" style="display: none;" title="Choose photo"
+        aria-label="Choose photo file">
+
+    <script src="script.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+
+</html>

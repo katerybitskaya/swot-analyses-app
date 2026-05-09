@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOT Analysis</title>
+    <link rel="stylesheet" href="analysis.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <h1 class="logo">SWOT Analysis</h1>
+        </div>
+        <div class="nav-right">
+            <span class="username" id="currentUserName">John Doe</span>
+            <select class="language-selector" id="languageSelector" title="Select language"
+                aria-label="Language selection">
+                <option value="EN">EN</option>
+                <option value="PL">PL</option>
+                <option value="RU">RU</option>
+            </select>
+        </div>
+    </nav>
+
+    <div class="main-content" id="mainContent">
+        <div class="slide active" id="slide1">
+            <h2 id="chooseAnalysisTitle">Choose an analysis</h2>
+            <div class="analysis-buttons">
+                <button type="button" class="btn swot-btn" onclick="selectAnalysis('swot')">SWOT</button>
+                <button type="button" class="btn tows-btn" onclick="selectAnalysis('tows')">TOWS</button>
+                <button type="button" class="btn swot-tows-btn" onclick="selectAnalysis('swot-tows')">SWOT-TOWS</button>
+            </div>
+        </div>
+
+        <div class="slide" id="slide2">
+            <h2 id="chooseActivityTitle">Choose your field of activity</h2>
+            <div class="activity-grid" id="activityGrid">
+            </div>
+            <div class="navigation-buttons">
+                <button class="nav-btn back-btn" onclick="goToSlide(1)" id="backBtn">Back</button>
+                <button class="nav-btn next-btn" onclick="proceedToQuestions()" id="nextBtn" disabled>Next</button>
+            </div>
+        </div>
+
+        <div class="slide" id="slide3">
+            <div class="question-slide">
+                <div class="question-header">
+                    <div class="question-progress" id="questionProgress">1 / 30</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                    </div>
+                    <h2 class="question-title" id="questionTitle">Заголовок критерия</h2>
+                </div>
+
+                <div class="answers-container" id="answersContainer">
+                </div>
+
+                <div class="question-navigation">
+                    <button class="nav-btn prev-btn" id="prevQuestionBtn" onclick="previousQuestion()">
+                        <span class="prev-text">Назад</span>
+                    </button>
+                    <button onclick="goBackToActivitySelection()" class="back-to-activity-btn" id="backToActivityBtn">
+                    </button>
+                    <button class="nav-btn next-btn" id="nextQuestionBtn" onclick="nextQuestion()" disabled>
+                        <span class="next-text">Далее</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide4">
+            <div class="tows-slide">
+                <div class="question-header">
+                    <div class="question-progress" id="towsProgress">1 / 8</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="towsProgressBar" style="width: 0%"></div>
+                    </div>
+                    <h2 class="question-title" id="towsTitle">S/O - Стратегии роста</h2>
+                    <p class="question-text" id="towsText">Умieść 1 в odpowiednich komórkach</p>
+                </div>
+
+                <div class="tows-content">
+                    <div class="table-container">
+                        <table class="tows-table" id="towsTable">
+                            <thead>
+                                <tr>
+                                    <th class="corner-cell">S/O</th>
+                                    <th>O1</th>
+                                    <th>O2</th>
+                                    <th>O3</th>
+                                    <th>O4</th>
+                                    <th>O5</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="row-header">S1</td>
+                                    <td class="cell-clickable" data-row="1" data-col="1"></td>
+                                    <td class="cell-clickable" data-row="1" data-col="2"></td>
+                                    <td class="cell-clickable" data-row="1" data-col="3"></td>
+                                    <td class="cell-clickable" data-row="1" data-col="4"></td>
+                                    <td class="cell-clickable" data-row="1" data-col="5"></td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">S2</td>
+                                    <td class="cell-clickable" data-row="2" data-col="1"></td>
+                                    <td class="cell-clickable" data-row="2" data-col="2"></td>
+                                    <td class="cell-clickable" data-row="2" data-col="3"></td>
+                                    <td class="cell-clickable" data-row="2" data-col="4"></td>
+                                    <td class="cell-clickable" data-row="2" data-col="5"></td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">S3</td>
+                                    <td class="cell-clickable" data-row="3" data-col="1"></td>
+                                    <td class="cell-clickable" data-row="3" data-col="2"></td>
+                                    <td class="cell-clickable" data-row="3" data-col="3"></td>
+                                    <td class="cell-clickable" data-row="3" data-col="4"></td>
+                                    <td class="cell-clickable" data-row="3" data-col="5"></td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">S4</td>
+                                    <td class="cell-clickable" data-row="4" data-col="1"></td>
+                                    <td class="cell-clickable" data-row="4" data-col="2"></td>
+                                    <td class="cell-clickable" data-row="4" data-col="3"></td>
+                                    <td class="cell-clickable" data-row="4" data-col="4"></td>
+                                    <td class="cell-clickable" data-row="4" data-col="5"></td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">S5</td>
+                                    <td class="cell-clickable" data-row="5" data-col="1"></td>
+                                    <td class="cell-clickable" data-row="5" data-col="2"></td>
+                                    <td class="cell-clickable" data-row="5" data-col="3"></td>
+                                    <td class="cell-clickable" data-row="5" data-col="4"></td>
+                                    <td class="cell-clickable" data-row="5" data-col="5"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="criteria-dropdown">
+                        <button class="criteria-toggle" id="criteriaToggle">Показать описание критериев</button>
+                        <div class="criteria-content" id="criteriaContent">
+                            <div class="criteria-columns">
+                                <div class="criteria-column">
+                                    <h4>Сильные стороны (S)</h4>
+                                    <div class="criteria-item">S1: Критерий 1</div>
+                                    <div class="criteria-item">S2: Критерий 2</div>
+                                    <div class="criteria-item">S3: Критерий 3</div>
+                                    <div class="criteria-item">S4: Критерий 4</div>
+                                    <div class="criteria-item">S5: Критерий 5</div>
+                                </div>
+                                <div class="criteria-column">
+                                    <h4>Возможности (O)</h4>
+                                    <div class="criteria-item">O1: Критерий 1</div>
+                                    <div class="criteria-item">O2: Критерий 2</div>
+                                    <div class="criteria-item">O3: Критерий 3</div>
+                                    <div class="criteria-item">O4: Критерий 4</div>
+                                    <div class="criteria-item">O5: Критерий 5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-navigation">
+                    <button class="nav-btn prev-btn" id="prevTowsBtn" onclick="previousTowsQuestion()">
+                        <span class="prev-text">Назад</span>
+                    </button>
+                    <button onclick="goToSlide(1)" class="back-to-activity-btn" id="backToAnalysisBtn">
+                        Вернуться к выбору анализа
+                    </button>
+                    <button class="nav-btn next-btn" id="nextTowsBtn" onclick="nextTowsQuestion()">
+                        <span class="next-text">Далее</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="weight.js" defer></script>
+    <script src="questions.js" defer></script>
+    <script src="analysis.js" defer></script>
+</body>
+
+</html>

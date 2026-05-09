@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOT Analysis - Authorization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-panel">
+            <div class="auth-header">
+                <h1>SWOT Analysis</h1>
+            </div>
+
+            <div class="auth-form" id="loginPanel">
+                <h2>Authorization</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="text" id="loginInput" placeholder="Login or Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="passwordInput" placeholder="Password" required>
+                        <div class="forgot-password">
+                            <span id="forgotPasswordLink">Forgot password?</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="auth-btn">Login</button>
+                </form>
+                <div class="auth-footer">
+                    <span id="createAccountLink">Create new account</span>
+                </div>
+                <div class="error-message" id="loginError"></div>
+            </div>
+
+            <div class="auth-form hidden" id="registrationPanel">
+                <h2>Create New Account</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="newPassword" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn disabled" id="createAccountBtn" disabled>Create
+                        Account</button>
+                </form>
+                <div class="auth-footer">
+                    <span id="backToLoginLink">Back to Login</span>
+                </div>
+                <div class="error-message" id="registrationError"></div>
+            </div>
+
+            <div class="auth-form hidden" id="forgotPasswordPanel">
+                <h2>Reset Password</h2>
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <input type="email" id="resetEmail" placeholder="Enter your email" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Send Reset Code</button>
+                </form>
+                <div class="auth-footer">
+                    <span id="backToLoginFromForgot">Back to Login</span>
+                </div>
+                <div class="error-message" id="forgotPasswordError"></div>
+            </div>
+
+            <div class="auth-form hidden" id="verificationPanel">
+                <h2>Enter Verification Code</h2>
+                <p>We sent a 6-digit code to your email</p>
+                <form id="verificationForm">
+                    <div class="form-group">
+                        <input type="text" id="verificationCode" placeholder="Enter 6-digit code" maxlength="6"
+                            required>
+                    </div>
+                    <button type="submit" class="auth-btn">Verify</button>
+                </form>
+                <div class="resend-code">
+                    <button type="button" id="resendCodeBtn" class="resend-btn"
+                        onclick="resendVerificationCode()">Resend Code</button>
+                </div>
+                <div class="auth-footer">
+                    <span id="backToLoginFromVerification">Back to Login</span>
+                </div>
+                <div class="error-message" id="verificationError"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

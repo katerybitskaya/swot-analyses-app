@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOT Analysis Result</title>
+    <link rel="stylesheet" href="result.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">SWOT Analysis</div>
+        </div>
+        <div class="nav-right">
+            <span class="username">Jan Kowalski</span>
+            <select class="language-selector" id="languageSelector" title="Select language"
+                aria-label="Language selection">
+                <option value="EN">EN</option>
+                <option value="PL">PL</option>
+                <option value="RU">RU</option>
+            </select>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="content-area">
+            <h2>Wyniki analizy SWOT</h2>
+            <div class="info-section dominance-info">
+                <p><strong>Dominuje:</strong> Mocne strony / Zagrożenia</p>
+            </div>
+
+            <div class="info-section specialty-info">
+                <p><strong>Zakres działalności:</strong> Edukacja</p>
+            </div>
+
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3>Liczba interakcji (N)</h3>
+                    <div class="histogram-chart chart-base">
+                        <div class="y-axis-labels">
+                            <div class="y-axis-label">5</div>
+                            <div class="y-axis-label">4</div>
+                            <div class="y-axis-label">3</div>
+                            <div class="y-axis-label">2</div>
+                            <div class="y-axis-label">1</div>
+                            <div class="y-axis-label">0</div>
+                        </div>
+                        <div class="chart-bar" style="height: 80%" data-value="4">
+                            <span class="bar-value">4</span>
+                            <span class="bar-label">S/O</span>
+                        </div>
+                        <div class="chart-bar" style="height: 20%" data-value="1">
+                            <span class="bar-value">1</span>
+                            <span class="bar-label">S/T</span>
+                        </div>
+                        <div class="chart-bar" style="height: 60%" data-value="3">
+                            <span class="bar-value">3</span>
+                            <span class="bar-label">W/O</span>
+                        </div>
+                        <div class="chart-bar" style="height: 40%" data-value="2">
+                            <span class="bar-value">2</span>
+                            <span class="bar-label">W/T</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Suma iloczynów wag i interakcji (S)</h3>
+                    <div class="radar-chart">
+                        <svg width="300" height="300" viewBox="0 0 300 300">
+                            <g class="radar-grid">
+                                <polygon points="150,50 225,125 150,200 75,125" fill="none" stroke="#ddd"
+                                    stroke-width="1" />
+                                <polygon points="150,75 200,125 150,175 100,125" fill="none" stroke="#ddd"
+                                    stroke-width="1" />
+                                <polygon points="150,100 175,125 150,150 125,125" fill="none" stroke="#ddd"
+                                    stroke-width="1" />
+                                <line x1="150" y1="50" x2="150" y2="200" stroke="#ddd" stroke-width="1" />
+                                <line x1="225" y1="125" x2="75" y2="125" stroke="#ddd" stroke-width="1" />
+                            </g>
+
+                            <polygon points="150,80 200,125 150,160 110,125" fill="rgba(52, 152, 219, 0.3)"
+                                stroke="#3498db" stroke-width="2" />
+
+                            <text x="150" y="45" text-anchor="middle" class="radar-label">S/O <tspan
+                                    class="radar-value">(0.8)</tspan></text>
+                            <text x="235" y="130" text-anchor="middle" class="radar-label">S/T <tspan
+                                    class="radar-value">(0.25)</tspan></text>
+                            <text x="150" y="215" text-anchor="middle" class="radar-label">W/O <tspan
+                                    class="radar-value">(0.6)</tspan></text>
+                            <text x="65" y="130" text-anchor="middle" class="radar-label">W/T <tspan
+                                    class="radar-value">(0.5)</tspan></text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-table-section">
+                <h3>Tabela wyników</h3>
+                <table class="summary-table table-base">
+                    <thead>
+                        <tr>
+                            <th>Wskaźniki</th>
+                            <th>Liczba interakcji</th>
+                            <th>Suma iloczynów wag i interakcji</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="first-column-bold">Mocne strony / Szanse (S/O)</td>
+                            <td>4</td>
+                            <td>0.8</td>
+                        </tr>
+                        <tr>
+                            <td class="first-column-bold">Mocne strony / Zagrożenia (S/T)</td>
+                            <td>1</td>
+                            <td>0.25</td>
+                        </tr>
+                        <tr>
+                            <td class="first-column-bold">Słabe strony / Szanse (W/O)</td>
+                            <td>3</td>
+                            <td>0.6</td>
+                        </tr>
+                        <tr>
+                            <td class="first-column-bold">Słabe strony / Zagrożenia (W/T)</td>
+                            <td>2</td>
+                            <td>0.5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="detailed-analysis">
+                <h3>Wybrane wskaźniki</h3>
+                <div class="analysis-dropdown">
+                    <label for="analysis-selector">Wybierz analizę:</label>
+                    <select class="analysis-selector" id="analysis-selector">
+                        <option value="">Wybierz analizę...</option>
+                        <option value="so">Mocne strony / Szanse (S/O)</option>
+                        <option value="st">Mocne strony / Zagrożenia (S/T)</option>
+                        <option value="wo">Słabe strony / Szanse (W/O)</option>
+                        <option value="wt">Słabe strony / Zagrożenia (W/T)</option>
+                    </select>
+                </div>
+
+                <div class="analysis-content hidden" id="analysis-content">
+                    <div class="analysis-table-container">
+                        <table class="analysis-table">
+                        </table>
+                    </div>
+
+                    <div class="analysis-summary">
+                        <p><strong>Выбранная стратегия:</strong> <span id="selected-strategy"></span></p>
+                        <p><strong>Количество взаимодействий:</strong> <span id="interaction-count"></span></p>
+                        <p><strong>Сумма произведений:</strong> <span id="weight-sum"></span></p>
+                    </div>
+
+                    <div class="selected-combinations">
+                        <h4>Выбранные комбинации:</h4>
+                        <ul id="combinations-list">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swot-tows-section hidden" id="swot-tows-section">
+                <h3>Анализ стратегий SWOT-TOWS</h3>
+                <p class="strategy-description">Предприятие должно стремиться к развитию и инвестировать, чтобы укрепить
+                    свои позиции на рынке</p>
+
+                <div class="charts-container">
+                    <div class="chart-container">
+                        <h3>Количество взаимодействий стратегий</h3>
+                        <div class="histogram-chart chart-base">
+                            <div class="y-axis-labels">
+                                <div class="y-axis-label">5</div>
+                                <div class="y-axis-label">4</div>
+                                <div class="y-axis-label">3</div>
+                                <div class="y-axis-label">2</div>
+                                <div class="y-axis-label">1</div>
+                                <div class="y-axis-label">0</div>
+                            </div>
+                            <div class="chart-bar chart-bar--aggressive" style="height: 80%" data-value="4">
+                                <span class="bar-label">Агрессивная</span>
+                            </div>
+                            <div class="chart-bar chart-bar--conservative" style="height: 20%" data-value="1">
+                                <span class="bar-label">Консервативная</span>
+                            </div>
+                            <div class="chart-bar chart-bar--competitive" style="height: 60%" data-value="3">
+                                <span class="bar-label">Конкурентная</span>
+                            </div>
+                            <div class="chart-bar chart-bar--defensive" style="height: 40%" data-value="2">
+                                <span class="bar-label">Оборонительная</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Сумма произведений весов стратегий</h3>
+                        <div class="histogram-chart chart-base">
+                            <div class="y-axis-labels">
+                                <div class="y-axis-label">1.0</div>
+                                <div class="y-axis-label">0.8</div>
+                                <div class="y-axis-label">0.6</div>
+                                <div class="y-axis-label">0.4</div>
+                                <div class="y-axis-label">0.2</div>
+                                <div class="y-axis-label">0.0</div>
+                            </div>
+                            <div class="chart-bar chart-bar--aggressive" style="height: 80%" data-value="0.8">
+                                <span class="bar-label">Агрессивная</span>
+                            </div>
+                            <div class="chart-bar chart-bar--conservative" style="height: 25%" data-value="0.25">
+                                <span class="bar-label">Консервативная</span>
+                            </div>
+                            <div class="chart-bar chart-bar--competitive" style="height: 60%" data-value="0.6">
+                                <span class="bar-label">Конкурентная</span>
+                            </div>
+                            <div class="chart-bar chart-bar--defensive" style="height: 50%" data-value="0.5">
+                                <span class="bar-label">Оборонительная</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-table-container">
+                    <table class="strategy-table">
+                        <thead>
+                            <tr>
+                                <th class="header-cell">SWOT-TOWS</th>
+                                <th class="header-cell" colspan="2">Возможности (O)</th>
+                                <th class="header-cell" colspan="2">Угрозы (T)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="vertical-header" rowspan="3">Сильные стороны (S)</td>
+                                <td class="strategy-name aggressive" colspan="2">Агрессивная стратегия</td>
+                                <td class="strategy-name conservative" colspan="2">Консервативная стратегия</td>
+                            </tr>
+                            <tr>
+                                <td class="metric-label">Количество взаимодействий</td>
+                                <td class="metric-label">Сумма произведений весов и взаимодействий</td>
+                                <td class="metric-label">Количество взаимодействий</td>
+                                <td class="metric-label">Сумма произведений весов и взаимодействий</td>
+                            </tr>
+                            <tr>
+                                <td class="strategy-aggressive-n">4</td>
+                                <td class="strategy-aggressive-s">0.80</td>
+                                <td class="strategy-conservative-n">1</td>
+                                <td class="strategy-conservative-s">0.25</td>
+                            </tr>
+                            <tr>
+                                <td class="vertical-header" rowspan="3">Слабые стороны (W)</td>
+                                <td class="strategy-name competitive" colspan="2">Конкурентная стратегия</td>
+                                <td class="strategy-name defensive" colspan="2">Оборонительная стратегия</td>
+                            </tr>
+                            <tr>
+                                <td class="metric-label">Количество взаимодействий</td>
+                                <td class="metric-label">Сумма произведений весов и взаимодействий</td>
+                                <td class="metric-label">Количество взаимодействий</td>
+                                <td class="metric-label">Сумма произведений весов и взаимодействий</td>
+                            </tr>
+                            <tr>
+                                <td class="strategy-competitive-n">3</td>
+                                <td class="strategy-competitive-s">0.60</td>
+                                <td class="strategy-defensive-n">2</td>
+                                <td class="strategy-defensive-s">0.50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="back-to-menu">
+                <button class="back-btn">
+                    Powrót do menu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="weight.js" defer></script>
+    <script src="result.js" defer></script>
+</body>
+
+</html>
